@@ -9,8 +9,9 @@ RUN mkdir -p /var/run/sshd && sed -i "s/UsePrivilegeSeparation.*/UsePrivilegeSep
 ADD set_root_pw.sh /set_root_pw.sh
 ADD run.sh /run.sh
 RUN chmod +x /*.sh
-RUN mkdir -p /var/data/www
-VOLUME ["/var/data/www"]
+
+RUN mkdir -p /usr/share/nginx/html
+VOLUME ["/usr/share/nginx/html"]
 CMD ["true"]
 
 
